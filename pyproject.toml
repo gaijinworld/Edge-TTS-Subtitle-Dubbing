@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "edge-tts-subtitle-dubbing"
+version = "1.0.0"
+description = "Convert SRT subtitles to synchronized audio using Edge TTS"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "edge-tts",
+    "pysrt",
+    "numpy",
+    "librosa",
+    "soundfile",
+    "audiostretchy",
+    "tqdm",
+]
+
+[project.scripts]
+edge-tts-subtitle-dubbing = "edge_tts_subtitle_dubbing.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/edge_tts_subtitle_dubbing"]
